@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Simple Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: teal;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        footer {
+            background-color: teal;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Simple Project</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('about')">About</a></li>
+                <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+                <li><a href="#" onclick="showSection('mycv')">My CV</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="active">
+            <h2>About Me</h2>
+            <p>This is a simple project to demonstrate my skills.</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Here are some of the projects I've worked on.</p>
+            <p>A personal website built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
+<p>A simple to-do list app built with JavaScript for managing daily tasks effectively.</p>
+                     <img src="images.png" height="52">
+
+    </section>
+
+        <section id="mycv">
+            <h2>My CV</h2><a href="https://www.linkedin.com/in/saud-undefined-496796334/" target="_blank">
+                 <img src="Linkedin.png" height="22"></a>
+            
+            <p>I am a student at King Saud University majoring in Information Systems (Data Science track).</p>
+    
+            <h3>My Experiences</h3>
+            <p>I worked as a supervisor in a store for 10 months, managing Saudi employees.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Simple Project</p>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                section.classList.remove("active");
+            });
+            document.getElementById(sectionId).classList.add("active");
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Thank you for contacting me!");
+        });
+    </script>
+</body>
+</html>
